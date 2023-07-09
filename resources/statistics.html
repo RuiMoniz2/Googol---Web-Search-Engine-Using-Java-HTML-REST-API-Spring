@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"></html>
+<html>
+<head> 
+    <title>Googlo</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <h1>Statistics</h1>
+    <div th:each="stat : ${stats}">
+        <p th:text="${stat}"></p>
+    </div>
+    
+</body>
+</html>

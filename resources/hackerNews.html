@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"></html>
+<html>
+<head> 
+    <title>Googlo</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <h1>Hacker News</h1>
+    <form th:action="@{/hackernewsusers}" method="post">
+        <div>
+            <label></label>
+            <input type="text" name="username">
+        </div>
+        <button type="submit">Index User Stories</button>
+    </form>
+    
+</body>
+</html>

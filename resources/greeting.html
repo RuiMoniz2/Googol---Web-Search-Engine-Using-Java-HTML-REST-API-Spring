@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"></html>
+<html>
+<head> 
+    <title>Googlo</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .form-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <a th:href="@{/login}">Login</a>
+    <a th:href="@{/statistics}">Statistics</a>
+    <a th:href="@{/hackerNews}">Hacker News</a>
+    <form th:action="@{/indexURL}" method="post">
+        <div class="form-row">
+            <input type="text" name="url">
+            <button type="submit">Index</button>
+        </div>
+    </form>
+    <div class="container">
+        <h1>Googlo</h1>
+        <form th:action="@{/greeting}" method="post">
+            <div>
+                <label></label>
+                <input type="text" name="sentence">
+            </div>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Googlo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+        .url {
+            font-size: 20px;
+            font-weight: bold;
+            color: rgb(100, 100, 226);
+        }
+        .navigationButtons {
+            display: flex; 
+        }
+
+        .navigationButtons button {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <a href="/greeting" style="text-decoration: none;">
+        <h1 style="display: inline; color: black;">Googlo</h1>
+    </a>
+            <form th:action="@{/greeting}" method="post">
+                <div>
+                    <label></label>
+                    <input type="text" name="sentence">
+                </div>
+                <button type="submit">Search</button>
+            </form>
+            
+        
+    <div th:each="url : ${urls}">
+        <p class="url">
+            <a th:href="${url.URL}" th:text="${url.URL}">Link</a>
+        </p>
+        <p th:text="${url.title}"></p>
+        <p th:text="${url.quote}"></p>
+    </div>
+    <div class="navigationButtons">
+        <form th:action="@{/previousResults}" method="post">
+            <button type="submit">Previous</button>
+        </form>
+        <form th:action="@{/nextResults}" method="post">
+            <button type="submit">Next</button>
+        </form>
+    </div>
+</body>
+</html>
